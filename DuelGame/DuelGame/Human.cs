@@ -9,5 +9,15 @@ namespace DuelGame
     class Human : Personage
     {
         private int _ingenuity = 2;
+
+        public Human()
+        {
+            live = 9;
+            force = 3;
+            protection = 2;
+            adroitness = 4;
+            accuracy = 3;
+            educability = 8;
+        }
     }
 }

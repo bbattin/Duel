@@ -13,11 +13,11 @@ namespace DuelGame
 
         List<Equipment> equipment;      // снаряжение
 
-        public abstract int live { get; set; }
-        public abstract int force { get; set; }
-        public abstract int protection { get; set; }
-        public abstract int adroitness { get; set; }
-        public abstract int accuracy { get; set; }
-        public abstract int educability { get; set; }
+        public int live { get; set; }
+        public int force { get; set; }
+        public int protection { get; set; }
+        public int adroitness { get; set; }
+        public int accuracy { get; set; }
+        public int educability { get; set; }
     }
 }
