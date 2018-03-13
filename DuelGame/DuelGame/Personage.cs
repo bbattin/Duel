@@ -10,8 +10,8 @@ namespace DuelGame
     {
         
         protected int money = 5;         // деньги на покупку оружия/брони
-
-        List<Equipment> equipment;      // снаряжение
+        protected int level = 1;         // уровень
+        List<Equipment> equipment;       // снаряжение
 
         public int live { get; set; }
         public int force { get; set; }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class Equipment
+
+    enum EquipmentType : ushort
     {
-        protected int level = 1;
-        protected EquipmentType type;
-        protected int price;
     }
 }
