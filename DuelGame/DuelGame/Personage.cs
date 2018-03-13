@@ -19,5 +19,9 @@ namespace DuelGame
         public int adroitness { get; set; }
         public int accuracy { get; set; }
         public int educability { get; set; }
+
+        protected abstract void ToAttack();
+        protected abstract void ToProtection();
+        protected abstract void UseFeatures();
     }
 }

@@ -19,5 +19,20 @@ namespace DuelGame
             accuracy = 3;
             educability = 8;
         }
+
+        protected override void ToAttack()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void ToProtection()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void UseFeatures()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
