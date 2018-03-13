@@ -8,5 +8,6 @@ namespace DuelGame
 {
     class Human : Personage
     {
+        private int _ingenuity = 2;
     }
 }

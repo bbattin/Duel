@@ -8,5 +8,6 @@ namespace DuelGame
 {
     class Beast : Personage
     {
+        private int _restoring = 1;
     }
 }

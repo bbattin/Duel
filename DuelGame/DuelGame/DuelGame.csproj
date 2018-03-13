@@ -46,6 +46,7 @@
     <Compile Include="Beast.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="ICharacteristic.cs" />
     <Compile Include="Magician.cs" />
     <Compile Include="Personage.cs" />
     <Compile Include="Program.cs" />

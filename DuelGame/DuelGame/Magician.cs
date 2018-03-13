@@ -8,5 +8,6 @@ namespace DuelGame
 {
     class Magician : Personage
     {
+        private int _magic = 3;
     }
 }
