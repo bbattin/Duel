@@ -1,53 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DuelGame.Personage">
-    <Position X="2.75" Y="1" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAkCABQAAAAAAAgAAACAAAAAAAEEAAAAAAAAAgAAEQA=</HashCode>
       <FileName>Personage.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="DuelGame.Human" Collapsed="true">
-    <Position X="1" Y="2.75" Width="1.5" />
+  <Class Name="DuelGame.Human">
+    <Position X="0.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACABAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DuelGame.Magician" Collapsed="true">
-    <Position X="4.75" Y="2.75" Width="1.5" />
+  <Class Name="DuelGame.Magician">
+    <Position X="5.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAQA=</HashCode>
       <FileName>Magician.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DuelGame.Beast" Collapsed="true">
-    <Position X="2.75" Y="2.75" Width="1.5" />
+  <Class Name="DuelGame.Beast">
+    <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQA=</HashCode>
       <FileName>Beast.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DuelGame.Equipment" Collapsed="true">
-    <Position X="5.5" Y="1" Width="1.75" />
+  <Class Name="DuelGame.Equipment">
+    <Position X="6.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Equipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.Armor" Collapsed="true">
-    <Position X="7.75" Y="1.75" Width="1.5" />
+    <Position X="9" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Armor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.Weapon" Collapsed="true">
-    <Position X="7" Y="2.75" Width="1.5" />
+    <Position X="7.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="DuelGame.UI" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DuelGame.GameLogic" Collapsed="true">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DuelGame.Program" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DuelGame.ICharacteristic" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAQAAAAAAAgAAACAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ICharacteristic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DuelGame.EquipmentType" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EquipmentType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
