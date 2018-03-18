@@ -16,7 +16,7 @@ namespace DuelGame
             Live = 110;
             Force = 6;
             Protection = 5;
-            Adroitness = 3;
+            Adroitness = 5;
             Accuracy = 7;
             Educability = 5;
         }
