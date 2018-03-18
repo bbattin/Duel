@@ -13,11 +13,11 @@ namespace DuelGame
         public Beast(string name)
         {
             Name = name;
-            Live = 15;
+            Live = 150;
             Force = 8;
-            Protection = 8;
-            Adroitness = 5;
-            Accuracy = 5;
+            Protection = 7;
+            Adroitness = 4;
+            Accuracy = 4;
             Educability = 2;
         }
 

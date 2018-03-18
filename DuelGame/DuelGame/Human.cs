@@ -13,7 +13,7 @@ namespace DuelGame
         public Human(string name)
         {
             Name = name;
-            Live = 9;
+            Live = 90;
             Force = 3;
             Protection = 2;
             Adroitness = 4;

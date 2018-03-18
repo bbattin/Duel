@@ -13,7 +13,7 @@ namespace DuelGame
         public Magician(string name)
         {
             Name = name;
-            Live = 11;
+            Live = 110;
             Force = 6;
             Protection = 5;
             Adroitness = 3;
