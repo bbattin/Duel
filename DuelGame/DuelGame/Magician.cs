@@ -10,29 +10,17 @@ namespace DuelGame
     {
         private int _magic = 3;
 
-        public Magician()
+        public Magician(string name)
         {
-            live = 11;
-            force = 6;
-            protection = 5;
-            adroitness = 3;
-            accuracy = 7;
-            educability = 5;
+            Name = name;
+            Live = 11;
+            Force = 6;
+            Protection = 5;
+            Adroitness = 3;
+            Accuracy = 7;
+            Educability = 5;
         }
 
-        protected override void ToAttack()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void ToProtection()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void UseFeatures()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

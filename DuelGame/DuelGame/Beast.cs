@@ -10,29 +10,17 @@ namespace DuelGame
     {
         private int _restoring = 1;
 
-        public Beast()
+        public Beast(string name)
         {
-            live = 15;
-            force = 8;
-            protection = 8;
-            adroitness = 5;
-            accuracy = 5;
-            educability = 2;
+            Name = name;
+            Live = 15;
+            Force = 8;
+            Protection = 8;
+            Adroitness = 5;
+            Accuracy = 5;
+            Educability = 2;
         }
 
-        protected override void ToAttack()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void ToProtection()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void UseFeatures()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

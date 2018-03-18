@@ -10,29 +10,17 @@ namespace DuelGame
     {
         private int _ingenuity = 2;
 
-        public Human()
+        public Human(string name)
         {
-            live = 9;
-            force = 3;
-            protection = 2;
-            adroitness = 4;
-            accuracy = 3;
-            educability = 8;
+            Name = name;
+            Live = 9;
+            Force = 3;
+            Protection = 2;
+            Adroitness = 4;
+            Accuracy = 3;
+            Educability = 8;
         }
 
-        protected override void ToAttack()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void ToProtection()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void UseFeatures()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

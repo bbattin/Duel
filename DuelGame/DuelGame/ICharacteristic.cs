@@ -8,11 +8,11 @@ namespace DuelGame
 {
     interface ICharacteristic
     {
-        int live { get; set; }              // жизнь
-        int force { get; set; }             // сила
-        int protection { get; set; }        // защита
-        int adroitness { get; set; }        // ловкость
-        int accuracy { get; set; }          // точность, меткость
-        int educability { get; set; }       // обучаемость
+        int Live { get; set; }              // жизнь
+        int Force { get; set; }             // сила
+        int Protection { get; set; }        // защита
+        int Adroitness { get; set; }        // ловкость
+        int Accuracy { get; set; }          // точность, меткость
+        int Educability { get; set; }       // обучаемость
     }
 }

@@ -10,6 +10,12 @@ namespace DuelGame
     {
         static void Main(string[] args)
         {
+            Magician a = new Magician("Bob");
+            Beast b = new Beast("Rex");
+
+            GameLogic.Duel(a, b);
+
+            Console.ReadKey();
         }
     }
 }
