@@ -24,11 +24,11 @@ namespace DuelGame
 
             do
             {
-                hitA = GetHitValue(a);
-                protA = GetProtectionValue(a);
+                hitA = GetHitValueForStep(a);
+                protA = GetProtectionValueForStep(a);
 
-                hitB = GetHitValue(b);
-                protB = GetProtectionValue(b);
+                hitB = GetHitValueForStep(b);
+                protB = GetProtectionValueForStep(b);
 
                 CompareValues(a, protA, hitB);
                 CompareValues(b, protB, hitA);
@@ -62,12 +62,12 @@ namespace DuelGame
             }
         }
 
-        private int GetProtectionValue(Personage a)
+        private int GetProtectionValueForStep(Personage a)
         {
             return (int)(a.Protection * Math.Round(a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
         }
 
-        private int GetHitValue(Personage a)
+        private int GetHitValueForStep(Personage a)
         {
             return (int)(a.Force * Math.Round(a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
         }
