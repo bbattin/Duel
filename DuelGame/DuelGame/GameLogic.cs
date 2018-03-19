@@ -27,11 +27,11 @@ namespace DuelGame
 
             do
             {
-                hitA = (int)Math.Round(a.Force * (a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
-                protA = (int)Math.Round(a.Protection * (a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
+                hitA = (int)(a.Force * Math.Round(a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
+                protA = (int)(a.Protection * Math.Round(a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
 
-                hitB = (int)Math.Round(b.Force * (b.Accuracy * GetRandomFromInterval(0.2, 1.0)));
-                protB = (int)Math.Round(b.Protection * (b.Adroitness * GetRandomFromInterval(0.2, 1.0)));
+                hitB = (int)(b.Force * Math.Round(b.Accuracy * GetRandomFromInterval(0.2, 1.0)));
+                protB = (int)(b.Protection * Math.Round(b.Adroitness * GetRandomFromInterval(0.2, 1.0)));
 
                 if (protA > hitB)
                 {
