@@ -8,8 +8,6 @@ namespace DuelGame
 {
     class Beast : Personage
     {
-        private int _restoring = 1;
-
         public Beast(string name)
         {
             Name = name;
@@ -21,6 +19,7 @@ namespace DuelGame
             Educability = 2;
         }
 
-        
+        private int _restoring = 1;
+
     }
 }

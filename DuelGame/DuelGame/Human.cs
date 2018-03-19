@@ -8,8 +8,6 @@ namespace DuelGame
 {
     class Human : Personage
     {
-        private int _ingenuity = 2;
-
         public Human(string name)
         {
             Name = name;
@@ -21,6 +19,6 @@ namespace DuelGame
             Educability = 8;
         }
 
-       
+        private int _ingenuity = 2;
     }
 }

@@ -8,8 +8,6 @@ namespace DuelGame
 {
     class Magician : Personage
     {
-        private int _magic = 3;
-
         public Magician(string name)
         {
             Name = name;
@@ -21,6 +19,6 @@ namespace DuelGame
             Educability = 5;
         }
 
-       
+        private int _magic = 3;
     }
 }
