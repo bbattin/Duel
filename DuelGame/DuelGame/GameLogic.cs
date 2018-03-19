@@ -30,25 +30,9 @@ namespace DuelGame
                 hitB = GetHitValue(b);
                 protB = GetProtectionValue(b);
 
-                if (protA > hitB)
-                {
-                    a.Live = a.Live - 1;
-
-                }
-                else
-                {
-                    a.Live = a.Live - (hitB - protA);
-                }
-                if (protB > hitA)
-                {
-                    b.Live = b.Live - 1;
-
-                }
-                else
-                {
-                    b.Live = b.Live - (hitA - protB);
-                }
-
+                CompareValues(a, protA, hitB);
+                CompareValues(b, protB, hitA);
+                
                 Console.WriteLine("{0} - жизни осталось: {1}", a.Name, a.Live);
                 Console.WriteLine("{0} - жизни осталось: {1}", b.Name, b.Live);
 
@@ -63,6 +47,19 @@ namespace DuelGame
                 Console.WriteLine("{0} - ты выиграл!", b.Name);
             }
             
+        }
+
+        private static void CompareValues(Personage a, int protA, int hitB)
+        {
+            if (protA > hitB)
+            {
+                a.Live = a.Live - 1;
+
+            }
+            else
+            {
+                a.Live = a.Live - (hitB - protA);
+            }
         }
 
         private int GetProtectionValue(Personage a)
