@@ -10,10 +10,7 @@ namespace DuelGame
     {
         public Random rand = new Random();
 
-        public double GetRandomFromInterval(double lowerBound, double upperBound)
-        {
-            return rand.NextDouble() * (upperBound - lowerBound) + lowerBound;
-        }
+        
 
         public void Duel(Personage a, Personage b)
         {
@@ -27,16 +24,16 @@ namespace DuelGame
 
             do
             {
-                hitA = (int)(a.Force * Math.Round(a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
-                protA = (int)(a.Protection * Math.Round(a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
+                hitA = GetHitValue(a);
+                protA = GetProtectionValue(a);
 
-                hitB = (int)(b.Force * Math.Round(b.Accuracy * GetRandomFromInterval(0.2, 1.0)));
-                protB = (int)(b.Protection * Math.Round(b.Adroitness * GetRandomFromInterval(0.2, 1.0)));
+                hitB = GetHitValue(b);
+                protB = GetProtectionValue(b);
 
                 if (protA > hitB)
                 {
                     a.Live = a.Live - 1;
-                    
+
                 }
                 else
                 {
@@ -51,7 +48,7 @@ namespace DuelGame
                 {
                     b.Live = b.Live - (hitA - protB);
                 }
-                
+
                 Console.WriteLine("{0} - жизни осталось: {1}", a.Name, a.Live);
                 Console.WriteLine("{0} - жизни осталось: {1}", b.Name, b.Live);
 
@@ -66,6 +63,21 @@ namespace DuelGame
                 Console.WriteLine("{0} - ты выиграл!", b.Name);
             }
             
+        }
+
+        private int GetProtectionValue(Personage a)
+        {
+            return (int)(a.Protection * Math.Round(a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
+        }
+
+        private int GetHitValue(Personage a)
+        {
+            return (int)(a.Force * Math.Round(a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
+        }
+
+        private double GetRandomFromInterval(double lowerBound, double upperBound)
+        {
+            return rand.NextDouble() * (upperBound - lowerBound) + lowerBound;
         }
     }
 }
