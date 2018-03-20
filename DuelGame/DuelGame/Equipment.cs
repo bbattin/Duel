@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class Equipment
+    abstract class Equipment : ICharacteristic
     {
-        protected int price;
+        public int Live { get; set; }
+        public int Force { get; set; }
+        public int Protection { get; set; }
+        public int Adroitness { get; set; }
+        public int Accuracy { get; set; }
+        public string Name { get; set; }
+
     }
 }

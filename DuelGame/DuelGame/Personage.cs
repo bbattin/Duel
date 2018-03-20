@@ -14,10 +14,9 @@ namespace DuelGame
         public int Protection { get; set; }
         public int Adroitness { get; set; }
         public int Accuracy { get; set; }
-        public int Educability { get; set; }
-        public string Name { get => _name; set => _name = value; }
+        public string Name { get ; set ; }
 
-        protected string _name;
+        
 
         //protected abstract void ToAttack();
         //protected abstract void ToProtection();

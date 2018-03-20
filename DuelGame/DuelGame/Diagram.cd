@@ -32,9 +32,10 @@
   <Class Name="DuelGame.Equipment">
     <Position X="6.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAIAAAAAIAAAAAAAAAAAAAAAAAAAJAAI=</HashCode>
       <FileName>Equipment.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="DuelGame.Armor" Collapsed="true">
     <Position X="9" Y="1.75" Width="1.5" />
