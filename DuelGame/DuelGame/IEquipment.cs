@@ -9,10 +9,10 @@ namespace DuelGame
     interface IEquipment
     {
         
-        int Force { get; set; }             // сила
-        int Protection { get; set; }        // защита
-        int Adroitness { get; set; }        // ловкость
-        int Accuracy { get; set; }          // точность, меткость
-        
+        int Damage { get; set; }            // урон
+        int Aiming { get; set; }            // прицельность
+        int Light { get; set; }             // легкость
+        int CountUsing { get; set; }        // количество возможных использований
+        int Shield { get; set; }            // щит, защита
     }
 }
