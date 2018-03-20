@@ -8,8 +8,6 @@ namespace DuelGame
 {
     class Equipment
     {
-        protected int level = 1;
-        protected EquipmentType type;
         protected int price;
     }
 }

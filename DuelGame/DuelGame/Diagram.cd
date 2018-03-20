@@ -32,7 +32,7 @@
   <Class Name="DuelGame.Equipment">
     <Position X="6.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Equipment.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,7 +60,7 @@
   <Class Name="DuelGame.GameLogic">
     <Position X="10.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAAACAAAAgABAAAAAAAABAQAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAAACAAEAgABAAAAAAAABAQAAAAAAA=</HashCode>
       <FileName>GameLogic.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -78,12 +78,5 @@
       <FileName>ICharacteristic.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="DuelGame.EquipmentType" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>EquipmentType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
