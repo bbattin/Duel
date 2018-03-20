@@ -11,7 +11,11 @@ namespace DuelGame
         public Random rand = new Random();
 
         
-
+        /// <summary>
+        /// ход игры
+        /// </summary>
+        /// <param name="a">первый игрок</param>
+        /// <param name="b">второй игрок</param>
         public void Duel(Personage a, Personage b)
         {
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}, меткость {4}, ловкость {5}", a.Name, a.Live, a.Force, a.Protection, a.Accuracy, a.Adroitness);
@@ -29,10 +33,16 @@ namespace DuelGame
 
                 hitB = GetHitValueForStep(b);
                 protB = GetProtectionValueForStep(b);
+                if (CheckLive(b, a))
+                {
+                    CompareValues(a, protA, hitB);
+                }
+                if (CheckLive(a, b))
+                {
+                    CompareValues(b, protB, hitA);
+                }
+                             
 
-                CompareValues(a, protA, hitB);
-                CompareValues(b, protB, hitA);
-                
                 Console.WriteLine("{0} - жизни осталось: {1}", a.Name, a.Live);
                 Console.WriteLine("{0} - жизни осталось: {1}", b.Name, b.Live);
 
@@ -49,6 +59,33 @@ namespace DuelGame
             
         }
 
+        /// <summary>
+        /// проверка на остаток жизни персонажа перед ходом
+        /// </summary>
+        /// <param name="a">персонаж, который проверяем</param>
+        /// <param name="b">соперник</param>
+        /// <returns></returns>
+        private static bool CheckLive(Personage a, Personage b)
+        {
+            bool live = false;
+
+            if (a.Live > 0)
+            {
+                live = true;
+            }
+            else
+            {
+                throw new Exception(string.Format("Персонаж {0} уже мертв и напасть не может. {1} выиграл!", a.Name, b.Name));
+            }
+            return live;
+        }
+
+        /// <summary>
+        /// сравниваем силу с защитой и отнимаем урон от жертвы
+        /// </summary>
+        /// <param name="a">жертва</param>
+        /// <param name="protA">защита жертвы</param>
+        /// <param name="hitB">сила противника</param>
         private static void CompareValues(Personage a, int protA, int hitB)
         {
             if (protA > hitB)
@@ -62,16 +99,32 @@ namespace DuelGame
             }
         }
 
+        /// <summary>
+        /// значение защиты для шага, учитывая рандом ловкости
+        /// </summary>
+        /// <param name="a">персонаж</param>
+        /// <returns></returns>
         private int GetProtectionValueForStep(Personage a)
         {
             return (int)(a.Protection * Math.Round(a.Adroitness * GetRandomFromInterval(0.2, 1.0)));
         }
 
+        /// <summary>
+        /// значение силы для шага, учитывая рандом меткости
+        /// </summary>
+        /// <param name="a">персонаж</param>
+        /// <returns></returns>
         private int GetHitValueForStep(Personage a)
         {
             return (int)(a.Force * Math.Round(a.Accuracy * GetRandomFromInterval(0.2, 1.0)));
         }
 
+        /// <summary>
+        /// получение рандома double чисел с указанием интервала
+        /// </summary>
+        /// <param name="lowerBound">начальное значение</param>
+        /// <param name="upperBound">конечное значение</param>
+        /// <returns></returns>
         private double GetRandomFromInterval(double lowerBound, double upperBound)
         {
             return rand.NextDouble() * (upperBound - lowerBound) + lowerBound;

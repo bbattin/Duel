@@ -14,8 +14,20 @@ namespace DuelGame
             Beast b = new Beast("Rex");
 
             GameLogic game = new GameLogic();
-            game.Duel(a, b);
 
+            try
+            {
+                game.Duel(a, b);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);                
+            }
+            finally
+            {
+                Console.WriteLine("Конец игры");
+            }
+            
             Console.ReadKey();
         }
     }
