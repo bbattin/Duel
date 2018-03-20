@@ -16,7 +16,7 @@ namespace DuelGame
             Protection = 7;
             Adroitness = 4;
             Accuracy = 4;
-            Educability = 2;
+            //Educability = 2;
         }
 
         private int _restoring = 1;

@@ -16,7 +16,7 @@ namespace DuelGame
             Protection = 5;
             Adroitness = 5;
             Accuracy = 7;
-            Educability = 5;
+            //Educability = 5;
         }
 
         private int _magic = 3;

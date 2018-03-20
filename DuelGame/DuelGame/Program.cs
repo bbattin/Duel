@@ -25,6 +25,7 @@ namespace DuelGame
             }
             finally
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Конец игры");
             }
             
