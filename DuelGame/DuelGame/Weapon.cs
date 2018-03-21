@@ -8,8 +8,8 @@ namespace DuelGame
 {
     abstract class Weapon
     {
-        public int Light { get; set; }
-        public int Shield { get; set; }
+        public int Light { get => _light; set => _light = value; }
+        public int Shield { get => _shield; set => _shield = value; }
 
         abstract protected int GetTotalShield();
 
