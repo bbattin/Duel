@@ -19,6 +19,6 @@ namespace DuelGame
             //Educability = 5;
         }
 
-        private int _magic = 3;
+        //private int _magic = 3;
     }
 }

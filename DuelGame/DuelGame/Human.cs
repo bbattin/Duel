@@ -19,6 +19,6 @@ namespace DuelGame
             //Educability = 8;
         }
 
-        private int _ingenuity = 2;
+        //private int _ingenuity = 2;
     }
 }

@@ -19,7 +19,7 @@ namespace DuelGame
             //Educability = 2;
         }
 
-        private int _restoring = 1;
+        //private int _restoring = 1;
 
     }
 }
