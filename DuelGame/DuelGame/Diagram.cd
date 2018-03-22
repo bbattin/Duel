@@ -11,36 +11,22 @@
   <Class Name="DuelGame.Human">
     <Position X="0.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.Magician">
     <Position X="5.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Magician.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.Beast">
     <Position X="2.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Beast.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DuelGame.Armor">
-    <Position X="8" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAgEAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Armor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="DuelGame.Weapon">
-    <Position X="5.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAgEAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Weapon.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.UI" Collapsed="true">
@@ -62,6 +48,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DuelGame.Weapon">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEABAAAAAAAAgAAAAAAAABAAAAAAgAAAAA=</HashCode>
+      <FileName>Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DuelGame.Armor">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAADAAgAAAAAAAACAAAAAAAABAAABAAAAAACAAAA=</HashCode>
+      <FileName>Armor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="DuelGame.ICharacteristic">

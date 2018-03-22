@@ -65,7 +65,7 @@ namespace DuelGame
         /// <param name="a">персонаж, который проверяем</param>
         /// <param name="b">соперник</param>
         /// <returns></returns>
-        private static bool CheckLive(Personage a, Personage b)
+        private static bool CheckLive(Personage a, Personage b)  // в класс Персонаж isLive
         {
             bool live = false;
 
@@ -75,7 +75,7 @@ namespace DuelGame
             }
             else
             {
-                throw new Exception(string.Format("Персонаж {0} уже мертв и напасть не может. {1} выиграл!", a.Name, b.Name));
+                throw new Exception(string.Format("Персонаж {0} уже мертв и напасть не может. {1} выиграл!", a.Name, b.Name));  // собственные исключения, отдельным классом
             }
             return live;
         }
@@ -86,7 +86,7 @@ namespace DuelGame
         /// <param name="a">жертва</param>
         /// <param name="protA">защита жертвы</param>
         /// <param name="hitB">сила противника</param>
-        private static void CompareValues(Personage a, int protA, int hitB)
+        private static void CompareValues(Personage a, int protA, int hitB) // вынести в класс персонаж
         {
             if (protA > hitB)
             {

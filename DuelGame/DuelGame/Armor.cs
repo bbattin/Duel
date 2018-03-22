@@ -8,9 +8,19 @@ namespace DuelGame
 {
     abstract class Armor
     {
-        public int Damage { get => _damage; set => _damage = value; }
-        public int Aiming { get => _aiming; set => _aiming = value; }
-        public int CountUsing { get => _countUsing; set => _countUsing = value; }
+        public int Damage
+        {
+            get
+            {
+                return _damage;
+            }
+            set
+            {
+                _damage = value;
+            }
+        }
+        public int Aiming { get ; set ; }
+        public int CountUsing { get ; set ; }
 
         abstract protected int GetTotalDamage();
 
