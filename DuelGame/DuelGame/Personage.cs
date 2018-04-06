@@ -18,8 +18,6 @@ namespace DuelGame
         /// <summary>
         /// проверка на остаток жизни персонажа перед ходом
         /// </summary>
-        /// <param name="a">персонаж, который проверяем</param>
-        /// <param name="b">соперник</param>
         /// <returns></returns>
         public bool CheckLive()  
         {
@@ -40,7 +38,6 @@ namespace DuelGame
         /// <summary>
         /// сравниваем силу с защитой и отнимаем урон от жертвы
         /// </summary>
-        /// <param name="a">жертва</param>
         /// <param name="protA">защита жертвы</param>
         /// <param name="hitB">сила противника</param>
         public void CompareValues(int protA, int hitB) 
@@ -59,7 +56,6 @@ namespace DuelGame
         /// <summary>
         /// значение защиты для шага, учитывая рандом ловкости
         /// </summary>
-        /// <param name="a">персонаж</param>
         /// <returns></returns>
         public int GetProtectionValueForStep()
         {
@@ -69,7 +65,6 @@ namespace DuelGame
         /// <summary>
         /// значение силы для шага, учитывая рандом меткости
         /// </summary>
-        /// <param name="a">персонаж</param>
         /// <returns></returns>
         public int GetHitValueForStep()
         {

@@ -21,14 +21,14 @@ namespace DuelGame
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);                
+                Console.WriteLine(ex.Message);
             }
             finally
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Конец игры");
             }
-            
+
             Console.ReadKey();
         }
     }

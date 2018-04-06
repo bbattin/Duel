@@ -8,9 +8,7 @@ namespace DuelGame
 {
     class GameLogic
     {
-        public Random rand = new Random();
-
-
+        
         /// <summary>
         /// ход игры
         /// </summary>
@@ -18,8 +16,8 @@ namespace DuelGame
         /// <param name="b">второй игрок</param>
         public void Duel(Personage a, Personage b)
         {
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}, меткость {4}, ловкость {5}", a.Name, a.Live, a.Force, a.Protection);
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}, меткость {4}, ловкость {5}", b.Name, b.Live, b.Force, b.Protection);
+            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", a.Name, a.Live, a.Force, a.Protection);
+            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", b.Name, b.Live, b.Force, b.Protection);
             int hitA;
             int protA;
 
