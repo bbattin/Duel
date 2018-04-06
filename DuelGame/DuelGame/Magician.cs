@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DuelGame
 {
     class Magician : Personage
+        // маг
     {
         public Magician(string name)
         {
@@ -14,11 +15,7 @@ namespace DuelGame
             Live = 110;
             Force = 6;
             Protection = 5;
-            Adroitness = 5;
-            Accuracy = 7;
-            //Educability = 5;
         }
-
-        //private int _magic = 3;
+        
     }
 }

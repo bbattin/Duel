@@ -42,11 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accuracy.cs" />
+    <Compile Include="Adroitness.cs" />
     <Compile Include="Armor.cs" />
     <Compile Include="Beast.cs" />
     <Compile Include="GameLogic.cs" />
     <Compile Include="Human.cs" />
-    <Compile Include="ICharacteristic.cs" />
     <Compile Include="Magician.cs" />
     <Compile Include="Personage.cs" />
     <Compile Include="Program.cs" />

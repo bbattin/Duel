@@ -6,24 +6,15 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    abstract class Personage : ICharacteristic
+    abstract class Personage
     {
         
-        public int Live { get; set; }
-        public int Force { get; set; }
-        public int Protection { get; set; }
-        public int Adroitness { get; set; }
-        public int Accuracy { get; set; }
-        public string Name { get ; set ; }
+        public int Live { get; set; }            // жизнь
+        public int Force { get; set; }           // сила
+        public int Protection { get; set; }      // сила
+        public Adroitness Adroitness { get; set; }      // ловкость
+        public Accuracy Accuracy { get; set; }        // меткость
+        public string Name { get ; set ; }       // имя персонажа
 
-        
-
-        //protected abstract void ToAttack();
-        //protected abstract void ToProtection();
-        //protected abstract void UseFeatures();
-
-        //protected int money = 5;         // деньги на покупку оружия/брони
-        //protected int level = 1;         // уровень
-        //List<Equipment> equipment;       // снаряжение
     }
 }

@@ -7,26 +7,18 @@ using System.Threading.Tasks;
 namespace DuelGame
 {
     abstract class Armor
+        // оружие
     {
-        public int Damage
-        {
-            get
-            {
-                return _damage;
-            }
-            set
-            {
-                _damage = value;
-            }
-        }
-        public int Aiming { get ; set ; }
-        public int CountUsing { get ; set ; }
+        
+        public int Aiming { get ; set ; }      // прицельность
+        public int CountUsing { get ; set ; }  // количество использований (патроны, стрелы)
 
-        abstract protected int GetTotalDamage();
+        /// <summary>
+        /// получение цифры урона
+        /// </summary>
+        /// <returns></returns>
+        abstract protected int GetTotalDamage(); 
 
-        private int _damage;       // урон
-        private int _aiming;       // прицельность
-        private int _countUsing;   // количество использований (патроны, стрелы)
     }
 }
  

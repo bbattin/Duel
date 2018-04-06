@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DuelGame
 {
     class Human : Personage
+        // человек
     {
         public Human(string name)
         {
@@ -14,11 +15,7 @@ namespace DuelGame
             Live = 90;
             Force = 3;
             Protection = 2;
-            Adroitness = 4;
-            Accuracy = 3;
-            //Educability = 8;
         }
 
-        //private int _ingenuity = 2;
     }
 }

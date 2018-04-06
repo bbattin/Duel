@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DuelGame
 {
     class Beast : Personage
+        // зверь
     {
         public Beast(string name)
         {
@@ -14,12 +15,7 @@ namespace DuelGame
             Live = 150;
             Force = 8;
             Protection = 7;
-            Adroitness = 4;
-            Accuracy = 4;
-            //Educability = 2;
         }
-
-        //private int _restoring = 1;
 
     }
 }
