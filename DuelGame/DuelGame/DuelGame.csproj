@@ -42,8 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accuracy.cs" />
-    <Compile Include="Adroitness.cs" />
     <Compile Include="Armor.cs" />
     <Compile Include="Beast.cs" />
     <Compile Include="GameLogic.cs" />
