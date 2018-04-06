@@ -11,8 +11,7 @@ namespace DuelGame
     {
         
         public int Aiming { get ; set ; }      // прицельность
-        public int CountUsing { get ; set ; }  // количество использований (патроны, стрелы)
-
+        
         /// <summary>
         /// получение цифры урона
         /// </summary>
