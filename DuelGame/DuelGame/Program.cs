@@ -10,40 +10,33 @@ namespace DuelGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Выберите персонажа для игры:");
-            Console.WriteLine("Человек - нажмите 1");
-            Console.WriteLine("Зверь - нажмите 2");
-            Console.WriteLine("Маг - нажмите 3");
-            string pers = Console.ReadLine();
+            
+            Personage user = UI.GetPersonageForUser();
 
-            Console.WriteLine("Выберите комплект снаряжения для игры:");
-            Console.WriteLine("Меч (+5 к урону), щит(+4 к защите) - нажмите 1");
-            Console.WriteLine("Посох (+8 к урону), мантия (+1 к защите) - нажмите 2");
-            Console.WriteLine("Перчатки-когти (+2 к урону), броня(+5 к защите) - нажмите 3");
-            Console.WriteLine("Лук и стрелы (+4 к урону), легкая обувь(+2 к защите) - нажмите 4");
-            Console.WriteLine("Кувалда (+6 к урону), шлем(+3 к защите) - нажмите 5");
-            string equipment = Console.ReadLine();
+            user.WeaponsPersonage = UI.GetWeaponsForUser();
 
-            Magician a = new Magician();
-            Beast b = new Beast();
+            //Magician a = new Magician();
+            //Beast b = new Beast();
 
-            GameLogic game = new GameLogic();
+            //GameLogic game = new GameLogic();
 
-            try
-            {
-                game.Duel(a, b);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Конец игры");
-            }
+            //try
+            //{
+            //    game.Duel(a, b);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            //finally
+            //{
+            //    Console.ForegroundColor = ConsoleColor.Red;
+            //    Console.WriteLine("Конец игры");
+            //}
 
             Console.ReadKey();
         }
+
+       
     }
 }
