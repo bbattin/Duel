@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class ClawGloves : Armor
-    // перчатки-когти
+    class SledgeHammerAndHelmet : Weapons
+        // кувалда и шлем
     {
-        protected override int GetTotalDamage()
+        public SledgeHammerAndHelmet()
         {
-            throw new NotImplementedException();
+            Damage = 6;
+            Protection = 3;
         }
     }
 }

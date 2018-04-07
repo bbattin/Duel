@@ -9,9 +9,9 @@ namespace DuelGame
     class Human : Personage
         // человек
     {
-        public Human(string name)
+        public Human()
         {
-            Name = name;
+            Name = "Человек";
             Live = 90;
             Force = 3;
             Protection = 2;

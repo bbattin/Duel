@@ -9,11 +9,11 @@ namespace DuelGame
     class Personage
     {
         
-        public int Live { get; set; }                   // жизнь
-        public int Force { get; set; }                  // сила
-        public int Protection { get; set; }             // защита
-        public string Name { get ; set ; }              // имя персонажа
-
+        public int Live { get; protected set; }                   // жизнь
+        public int Force { get; protected set; }                  // сила
+        public int Protection { get; protected set; }             // защита
+        public string Name { get ; protected set; }               // имя персонажа
+        public Weapons WeaponsPersonage { get; set; }             // оружие персонажа
 
         /// <summary>
         /// проверка на остаток жизни персонажа перед ходом

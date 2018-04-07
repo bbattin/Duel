@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class Magician : Personage
-        // маг
+    class ClawGlovesAndArmor : Weapons
+    // перчатки-когти + броня - комлект 3
     {
-        public Magician(string name)
+        public ClawGlovesAndArmor()
         {
-            Name = name;
-            Live = 110;
-            Force = 6;
+            Damage = 4;
             Protection = 5;
         }
-        
     }
 }

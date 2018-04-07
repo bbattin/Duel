@@ -9,9 +9,9 @@ namespace DuelGame
     class Beast : Personage
         // зверь
     {
-        public Beast(string name)
+        public Beast()
         {
-            Name = name;
+            Name = "Зверь";
             Live = 150;
             Force = 8;
             Protection = 7;

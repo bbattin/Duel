@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class Sword : Armor
-        // меч
+    class SwordAndShield : Weapons
+    // комплект 1 - меч + щит
     {
-        protected override int GetTotalDamage()
+        public SwordAndShield()
         {
-            throw new NotImplementedException();
+            Damage = 4;
+            Protection = 5;
         }
+
+       
     }
 }
