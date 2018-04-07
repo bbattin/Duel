@@ -15,14 +15,11 @@ namespace DuelGame
 
             user.WeaponsPersonage = UI.GetWeaponsForUser();
 
-            //Magician a = new Magician();
-            //Beast b = new Beast();
-
-            //GameLogic game = new GameLogic();
+            GameLogic.Duel(user);
 
             //try
             //{
-            //    game.Duel(a, b);
+            //    GameLogic.Duel(user);
             //}
             //catch (Exception ex)
             //{

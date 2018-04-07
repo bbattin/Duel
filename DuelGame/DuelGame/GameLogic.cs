@@ -8,16 +8,17 @@ namespace DuelGame
 {
     class GameLogic
     {
-        
+               
         /// <summary>
         /// ход игры
         /// </summary>
-        /// <param name="a">первый игрок</param>
-        /// <param name="b">второй игрок</param>
-        public void Duel(Personage a, Personage b)
+        /// <param name="userPer">первый игрок</param>
+        /// <param name="random">второй игрок</param>
+        public static void Duel(Personage userPer)
         {
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", a.Name, a.Live, a.Force, a.Protection);
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", b.Name, b.Live, b.Force, b.Protection);
+            Personage randomPer = GetRandomPersonage();
+            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
+            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
             int hitA;
             int protA;
 
@@ -26,37 +27,57 @@ namespace DuelGame
 
             do
             {
-                hitA = a.GetHitValueForStep();
-                protA = a.GetProtectionValueForStep();
+                hitA = userPer.GetHitValueForStep();
+                protA = userPer.GetProtectionValueForStep();
 
-                hitB = b.GetHitValueForStep();
-                protB = b.GetProtectionValueForStep();
-                if (b.CheckLive())
-                {
-                    a.CompareValues(protA, hitB);
-                }
-                if (a.CheckLive())
-                {
-                    b.CompareValues(protB, hitA);
-                }
+                hitB = randomPer.GetHitValueForStep();
+                protB = randomPer.GetProtectionValueForStep();
+                //if (randomPer.CheckLive())
+                //{
+                    userPer.CompareValues(protA, hitB);
+                //}
+                //if (userPer.CheckLive())
+                //{
+                    randomPer.CompareValues(protB, hitA);
+                //}
                              
 
-                Console.WriteLine("{0} - жизни осталось: {1}", a.Name, a.Live);
-                Console.WriteLine("{0} - жизни осталось: {1}", b.Name, b.Live);
+                Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
+                Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
 
-            } while (a.Live > 0 && b.Live > 0);
+            } while (userPer.Live > 0 && randomPer.Live > 0);
 
-            if (a.Live > 0)
+            if (userPer.Live > 0)
             {
-                Console.WriteLine("{0} - ты выиграл!", a.Name);
+                Console.WriteLine("{0} - ты выиграл!", userPer.Name);
             }
             else
             {
-                Console.WriteLine("{0} - ты выиграл!", b.Name);
+                Console.WriteLine("{0} - ты выиграл!", randomPer.Name);
             }
             
         }
 
-     
+        private static Personage GetRandomPersonage()
+        {
+            Personage d = null;
+            int num = rand.Next(1, 3);
+            switch (num)
+            {
+                case 1:
+                    d = new Human();
+                    break;
+                case 2:
+                    d = new Beast();
+                    break;
+                case 3:
+                    d = new Magician();
+                    break;         
+            }
+            return d;
+        }
+
+        private static Random rand = new Random();
+
     }
 }
