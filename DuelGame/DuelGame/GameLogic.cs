@@ -74,6 +74,25 @@ namespace DuelGame
                     d = new Magician();
                     break;         
             }
+            int numW = rand.Next(1, 5);
+            switch (numW)
+            {
+                case 1:
+                    d.WeaponsPersonage = new SwordAndShield();
+                    break;
+                case 2:
+                    d.WeaponsPersonage = new StaffAndMantle();
+                    break;
+                case 3:
+                    d.WeaponsPersonage = new ClawGlovesAndArmor();
+                    break;
+                case 4:
+                    d.WeaponsPersonage = new BowArrowAndLightShoes();
+                    break;
+                case 5:
+                    d.WeaponsPersonage = new SledgeHammerAndHelmet();
+                    break;
+            }
             return d;
         }
 
