@@ -19,15 +19,16 @@ namespace DuelGame
             Personage randomPer = GetRandomPersonage();
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
-           
+            int damageUzer;
+            int damageRandom;
             do
             {
-                userPer.CompareValues(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
-                randomPer.CompareValues(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
-                                        
-
-                Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
-                Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
+                damageUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
+                damageRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
+                userPer.SetLiveAfterDamage(damageUzer);
+                randomPer.SetLiveAfterDamage(damageRandom);
+                //Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
+                //Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
 
             } while (userPer.Live > 0 && randomPer.Live > 0);
 
@@ -41,6 +42,28 @@ namespace DuelGame
             }
             
         }
+
+        /// <summary>
+        /// сравниваем силу с защитой и отнимаем урон от жертвы
+        /// </summary>
+        /// <param name="protA">защита жертвы</param>
+        /// <param name="hitB">сила противника</param>
+        private static int GetRezultDamage(int protA, int hitB)
+        {
+            int damage;
+
+            if (protA > hitB)
+            {
+                damage = 1;
+
+            }
+            else
+            {
+                damage = hitB - protA;
+            }
+            return damage;
+        }
+
 
         private static Personage GetRandomPersonage()
         {

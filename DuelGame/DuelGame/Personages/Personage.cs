@@ -35,24 +35,7 @@ namespace DuelGame
         //}
 
 
-        /// <summary>
-        /// сравниваем силу с защитой и отнимаем урон от жертвы
-        /// </summary>
-        /// <param name="protA">защита жертвы</param>
-        /// <param name="hitB">сила противника</param>
-        public void CompareValues(int protA, int hitB) 
-        {
-            if (protA > hitB)
-            {
-                Live = Live - 1;
-
-            }
-            else
-            {
-                Live = Live - (hitB - protA);
-            }
-        }
-
+       
         /// <summary>
         /// значение защиты для шага, учитывая рандом защиты из-за ловкости
         /// </summary>
@@ -70,6 +53,16 @@ namespace DuelGame
         {
             return (int)Math.Round(Force * GetRandomFromInterval(0.5, 1.5) + WeaponsPersonage.Damage);
         }
+
+        /// <summary>
+        /// отнимаем урон от жертвы
+        /// </summary>
+        /// <param name="damage">урон</param>
+        public void SetLiveAfterDamage(int damage)
+        {
+            Live = Live - damage;
+        }
+
 
         /// <summary>
         /// получение рандома double чисел с указанием интервала
