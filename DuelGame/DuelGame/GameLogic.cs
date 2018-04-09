@@ -19,28 +19,12 @@ namespace DuelGame
             Personage randomPer = GetRandomPersonage();
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
-            int hitA;
-            int protA;
-
-            int hitB;
-            int protB;
-
+           
             do
             {
-                hitA = userPer.GetHitValueForStep();
-                protA = userPer.GetProtectionValueForStep();
-
-                hitB = randomPer.GetHitValueForStep();
-                protB = randomPer.GetProtectionValueForStep();
-                //if (randomPer.CheckLive())
-                //{
-                    userPer.CompareValues(protA, hitB);
-                //}
-                //if (userPer.CheckLive())
-                //{
-                    randomPer.CompareValues(protB, hitA);
-                //}
-                             
+                userPer.CompareValues(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
+                randomPer.CompareValues(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
+                                        
 
                 Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
                 Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);

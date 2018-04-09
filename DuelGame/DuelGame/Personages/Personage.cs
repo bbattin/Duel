@@ -59,7 +59,7 @@ namespace DuelGame
         /// <returns></returns>
         public int GetProtectionValueForStep()
         {
-            return (int)(Protection * Math.Round(GetRandomFromInterval(0.2, 1.0)));
+            return (int)(Protection * Math.Round(GetRandomFromInterval(0.2, 1.0) + WeaponsPersonage.Protection));
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace DuelGame
         /// <returns></returns>
         public int GetHitValueForStep()
         {
-            return (int)(Force * Math.Round(GetRandomFromInterval(0.8, 1.5)));
+            return (int)(Force * Math.Round(GetRandomFromInterval(0.8, 1.5) + WeaponsPersonage.Damage));
         }
 
         /// <summary>
