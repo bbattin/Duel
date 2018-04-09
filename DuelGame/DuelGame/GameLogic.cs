@@ -19,14 +19,15 @@ namespace DuelGame
             Personage randomPer = GetRandomPersonage();
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
             Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
-            int damageUzer;
-            int damageRandom;
+            int damageForUzer;
+            int damageForRandom;
             do
             {
-                damageUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
-                damageRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
-                userPer.SetLiveAfterDamage(damageUzer);
-                randomPer.SetLiveAfterDamage(damageRandom);
+                damageForUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
+                damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
+                userPer.SetLiveAfterDamage(damageForUzer);
+                randomPer.SetLiveAfterDamage(damageForRandom);
+
                 //Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
                 //Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
 
@@ -44,7 +45,7 @@ namespace DuelGame
         }
 
         /// <summary>
-        /// сравниваем силу с защитой и отнимаем урон от жертвы
+        /// сравниваем силу с защитой и получаем значение урона
         /// </summary>
         /// <param name="protA">защита жертвы</param>
         /// <param name="hitB">сила противника</param>
