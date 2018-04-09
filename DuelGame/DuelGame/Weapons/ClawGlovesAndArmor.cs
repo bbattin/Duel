@@ -11,7 +11,7 @@ namespace DuelGame
     {
         public ClawGlovesAndArmor()
         {
-            Damage = 4;
+            Damage = 2;
             Protection = 5;
         }
     }

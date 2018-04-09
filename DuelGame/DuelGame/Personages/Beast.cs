@@ -12,7 +12,7 @@ namespace DuelGame
         public Beast()
         {
             Name = "Зверь";
-            Live = 150;
+            Live = 110;
             Force = 8;
             Protection = 7;
         }

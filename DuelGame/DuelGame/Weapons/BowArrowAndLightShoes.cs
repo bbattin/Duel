@@ -12,7 +12,7 @@ namespace DuelGame
         public BowArrowAndLightShoes()
         {
             Damage = 4;
-            Protection = 5;
+            Protection = 2;
         }
     }
 }

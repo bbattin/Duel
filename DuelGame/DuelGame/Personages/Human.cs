@@ -13,8 +13,8 @@ namespace DuelGame
         {
             Name = "Человек";
             Live = 90;
-            Force = 3;
-            Protection = 2;
+            Force = 5;
+            Protection = 4;
         }
 
     }

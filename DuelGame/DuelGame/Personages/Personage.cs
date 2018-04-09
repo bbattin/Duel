@@ -54,21 +54,21 @@ namespace DuelGame
         }
 
         /// <summary>
-        /// значение защиты для шага, учитывая рандом ловкости
+        /// значение защиты для шага, учитывая рандом защиты из-за ловкости
         /// </summary>
         /// <returns></returns>
         public int GetProtectionValueForStep()
         {
-            return (int)(Protection * Math.Round(GetRandomFromInterval(0.2, 1.0) + WeaponsPersonage.Protection));
+            return (int)Math.Round(Protection * GetRandomFromInterval(0.2, 1.2) + WeaponsPersonage.Protection);
         }
 
         /// <summary>
-        /// значение силы для шага, учитывая рандом меткости
+        /// значение силы для шага, учитывая рандом урона из-за меткости
         /// </summary>
         /// <returns></returns>
         public int GetHitValueForStep()
         {
-            return (int)(Force * Math.Round(GetRandomFromInterval(0.8, 1.5) + WeaponsPersonage.Damage));
+            return (int)Math.Round(Force * GetRandomFromInterval(0.5, 1.5) + WeaponsPersonage.Damage);
         }
 
         /// <summary>
