@@ -114,43 +114,43 @@ namespace DuelGame
             }
         }
 
-        public void ToDamage()
+        public void ToDamage(int damageV)
         {
             if (_damage != null)
             {
-                _damage(this, new DamageToEventArgs());
+                _damage(this, new DamageToEventArgs(damageV));
             }
         }
 
-        public void OnStartedG()
+        public void OnStartedG(Personage uzer, Personage rand)
         {
             if (_startG != null)
             {
-                _startG(this, new StartedFinishedGameEventArgs());
+                _startG(this, new StartedFinishedGameEventArgs(uzer, rand));
             }
         }
 
-        public void OnFinishedG()
+        public void OnFinishedG(Personage uzer, Personage rand)
         {
             if (_finishG != null)
             {
-                _finishG(this, new StartedFinishedGameEventArgs());
+                _finishG(this, new StartedFinishedGameEventArgs(uzer, rand));
             }
         }
 
-        public void OnStartedR()
+        public void OnStartedR(Personage uzer, Personage rand)
         {
             if (_startR != null)
             {
-                _startR(this, new StartedFinishedRoundEventArgs());
+                _startR(this, new StartedFinishedRoundEventArgs(uzer, rand));
             }
         }
 
-        public void OnFinishedR()
+        public void OnFinishedR(Personage uzer, Personage rand)
         {
-            if (_finishG != null)
+            if (_finishR != null)
             {
-                _finishR(this, new StartedFinishedRoundEventArgs());
+                _finishR(this, new StartedFinishedRoundEventArgs(uzer, rand));
             }
         }
 
