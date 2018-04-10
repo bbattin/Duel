@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    delegate void DamageToPersonage(object sender, DamageToEventArgs args);
+    
     
     delegate void StartedGame(object sender, StartedFinishedGameEventArgs args);
     delegate void FinishedGame(object sender, StartedFinishedGameEventArgs args);
@@ -23,49 +23,40 @@ namespace DuelGame
         /// </summary>
         /// <param name="userPer">первый игрок</param>
         /// <param name="random">второй игрок</param>
-        public static void Duel(Personage userPer)
+        public void Duel(Personage userPer)
         {
             Personage randomPer = GetRandomPersonage();
+            OnStartedG(userPer, randomPer);
             //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
             //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
             int damageForUzer;
             int damageForRandom;
             do
             {
+                OnStartedR(userPer, randomPer);
                 damageForUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
                 damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
                 userPer.SetLiveAfterDamage(damageForUzer);
                 randomPer.SetLiveAfterDamage(damageForRandom);
-
+                
                 //Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
                 //Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
+                OnFinishedR(userPer, randomPer);
 
             } while (userPer.Live > 0 && randomPer.Live > 0);
+            OnFinishedG(userPer, randomPer);
 
-            if (userPer.Live > 0)
-            {
-                Console.WriteLine("{0} - ты выиграл!", userPer.Name);
-            }
-            else
-            {
-                Console.WriteLine("{0} - ты выиграл!", randomPer.Name);
-            }
-            
+            //if (userPer.Live > 0)
+            //{
+            //    Console.WriteLine("{0} - ты выиграл!", userPer.Name);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("{0} - ты выиграл!", randomPer.Name);
+            //}
+
         }
-
-
-        public event DamageToPersonage Damage
-        {
-            add
-            {
-                _damage += value;
-            }
-            remove
-            {
-                _damage -= value;
-            }
-        }
-
+               
         public event StartedGame StartedG
         {
             add
@@ -114,14 +105,7 @@ namespace DuelGame
             }
         }
 
-        public void ToDamage(int damageV)
-        {
-            if (_damage != null)
-            {
-                _damage(this, new DamageToEventArgs(damageV));
-            }
-        }
-
+       
         public void OnStartedG(Personage uzer, Personage rand)
         {
             if (_startG != null)
@@ -155,18 +139,13 @@ namespace DuelGame
         }
 
 
-        private DamageToPersonage _damage;
-        private StartedGame _startG;
-        private FinishedGame _finishG;
-        private StartedRound _startR;
-        private FinishedRound _finishR;
-
+       
         /// <summary>
         /// сравниваем силу с защитой и получаем значение урона
         /// </summary>
         /// <param name="protA">защита жертвы</param>
         /// <param name="hitB">сила противника</param>
-        private static int GetRezultDamage(int protA, int hitB)
+        private int GetRezultDamage(int protA, int hitB)
         {
             int damage;
 
@@ -183,7 +162,7 @@ namespace DuelGame
         }
 
 
-        private static Personage GetRandomPersonage()
+        private Personage GetRandomPersonage()
         {
             Personage d = null;
             int num = rand.Next(1, 3);
@@ -222,6 +201,9 @@ namespace DuelGame
         }
 
         private static Random rand = new Random();
-
+        private StartedGame _startG;
+        private FinishedGame _finishG;
+        private StartedRound _startR;
+        private FinishedRound _finishR;
     }
 }

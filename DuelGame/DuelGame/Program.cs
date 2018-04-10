@@ -15,7 +15,8 @@ namespace DuelGame
 
             user.WeaponsPersonage = UI.GetWeaponsForUser();
 
-            GameLogic.Duel(user);
+            GameLogic game = new GameLogic();
+            game.Duel(user);
 
             //try
             //{

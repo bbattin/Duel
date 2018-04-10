@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
+    delegate void DamageToPersonage(object sender, DamageToEventArgs args);
+
     class Personage
     {
         
@@ -61,8 +63,28 @@ namespace DuelGame
         public void SetLiveAfterDamage(int damage)
         {
             Live = Live - damage;
+            ToDamage(damage);
         }
 
+        public event DamageToPersonage Damage
+        {
+            add
+            {
+                _damage += value;
+            }
+            remove
+            {
+                _damage -= value;
+            }
+        }
+
+        public void ToDamage(int damageV)
+        {
+            if (_damage != null)
+            {
+                _damage(this, new DamageToEventArgs(damageV));
+            }
+        }
 
         /// <summary>
         /// получение рандома double чисел с указанием интервала
@@ -76,5 +98,6 @@ namespace DuelGame
         }
 
         private Random rand = new Random();
+        private DamageToPersonage _damage;
     }
 }
