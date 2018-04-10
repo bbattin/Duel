@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class StartedFinishedGameEventArgs
+    class StartedFinishedGameEventArgs : EventArgs
     {
         public StartedFinishedGameEventArgs(Personage uzer, Personage rand)
         {

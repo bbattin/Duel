@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class DamageToEventArgs
+    class DamageToEventArgs : EventArgs
     {
         public DamageToEventArgs(int damageV)
         {

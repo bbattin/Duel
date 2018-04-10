@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    
-    
     delegate void StartedGame(object sender, StartedFinishedGameEventArgs args);
     delegate void FinishedGame(object sender, StartedFinishedGameEventArgs args);
 
     delegate void StartedRound(object sender, StartedFinishedRoundEventArgs args);
     delegate void FinishedRound(object sender, StartedFinishedRoundEventArgs args);
-
 
     class GameLogic
     {
