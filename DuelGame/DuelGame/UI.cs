@@ -10,34 +10,34 @@ namespace DuelGame
     {
         public static Personage GetPersonageForUser()
         {
-            Human a = new Human();
-            Beast b = new Beast();
-            Magician c = new Magician();
             Console.WriteLine("Выберите персонажа для игры:");
-            Console.WriteLine("{0} (жизнь - {1}, сила - {2}, защита {3} - нажмите 1)", a.Name, a.Live, a.Force, a.Protection);
-            Console.WriteLine("{0} (жизнь - {1}, сила - {2}, защита {3} - нажмите 2)", b.Name, b.Live, b.Force, b.Protection);
-            Console.WriteLine("{0} (жизнь - {1}, сила - {2}, защита {3} - нажмите 3)", c.Name, c.Live, c.Force, c.Protection);
+            Console.WriteLine("Человек (жизнь 100, сила 5, защита 7) - нажмите 1");
+            Console.WriteLine("Зверь (жизнь 110, сила 8, защита 5) - нажмите 2");
+            Console.WriteLine("Маг (жизнь 105, сила 6, защита 6) - нажмите 3");
             string pers = Console.ReadLine();
+            Console.WriteLine("Введите имя персонажа: ");
+            string name = Console.ReadLine();
             Personage d;
             switch (pers)
             {
                 case "1":
-                    Console.WriteLine("Выбран персонаж {0}.", a.Name);
-                    d = a;
+                    Console.WriteLine("Выбран персонаж Человек");
+                    d = new Human();
                     break;
                 case "2":
-                    Console.WriteLine("Выбран персонаж {0}.", b.Name);
-                    d = b;
+                    Console.WriteLine("Выбран персонаж Зверь");
+                    d = new Beast();
                     break;
                 case "3":
-                    Console.WriteLine("Выбран персонаж {0}.", c.Name);
-                    d = c;
+                    Console.WriteLine("Выбран персонаж Маг");
+                    d = new Magician();
                     break;
                 default:
                     Console.WriteLine("Ошибка: введена неверная цифра. Вам выбран по умолчанию персонаж Человек.");
-                    d = a;
+                    d = new Human();
                     break;
             }
+            d.Name = name;
             return d;
         }
 

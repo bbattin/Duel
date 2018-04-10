@@ -12,9 +12,9 @@ namespace DuelGame
         public Human()
         {
             Name = "Человек";
-            Live = 90;
+            Live = 100;
             Force = 5;
-            Protection = 4;
+            Protection = 7;
         }
 
     }

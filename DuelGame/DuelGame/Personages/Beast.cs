@@ -14,8 +14,10 @@ namespace DuelGame
             Name = "Зверь";
             Live = 110;
             Force = 8;
-            Protection = 7;
+            Protection = 5;
         }
+
+       
 
     }
 }

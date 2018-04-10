@@ -12,7 +12,7 @@ namespace DuelGame
         public int Live { get; protected set; }                   // жизнь
         public int Force { get; protected set; }                  // сила
         public int Protection { get; protected set; }             // защита
-        public string Name { get ; protected set; }               // имя персонажа
+        public string Name { get ; set; }                         // имя персонажа
         public Weapons WeaponsPersonage { get; set; }             // оружие персонажа
 
         ///// <summary>
