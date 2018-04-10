@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
+    delegate void DamageToPersonage(object sender, DamageToEventArgs args);
+    
+    delegate void StartedGame(object sender, StartedFinishedGameEventArgs args);
+    delegate void FinishedGame(object sender, StartedFinishedGameEventArgs args);
+
+    delegate void StartedRound(object sender, StartedFinishedRoundEventArgs args);
+    delegate void FinishedRound(object sender, StartedFinishedRoundEventArgs args);
+
+
     class GameLogic
     {
                
@@ -17,8 +26,8 @@ namespace DuelGame
         public static void Duel(Personage userPer)
         {
             Personage randomPer = GetRandomPersonage();
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
-            Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
+            //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
+            //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
             int damageForUzer;
             int damageForRandom;
             do
@@ -43,6 +52,114 @@ namespace DuelGame
             }
             
         }
+
+
+        public event DamageToPersonage Damage
+        {
+            add
+            {
+                _damage += value;
+            }
+            remove
+            {
+                _damage -= value;
+            }
+        }
+
+        public event StartedGame StartedG
+        {
+            add
+            {
+                _startG += value;
+            }
+            remove
+            {
+                _startG -= value;
+            }
+        }
+
+        public event FinishedGame FinishedG
+        {
+            add
+            {
+                _finishG += value;
+            }
+            remove
+            {
+                _finishG -= value;
+            }
+        }
+
+        public event StartedRound StartedR
+        {
+            add
+            {
+                _startR += value;
+            }
+            remove
+            {
+                _startR -= value;
+            }
+        }
+
+        public event FinishedRound FinishedR
+        {
+            add
+            {
+                _finishR += value;
+            }
+            remove
+            {
+                _finishR -= value;
+            }
+        }
+
+        public void ToDamage()
+        {
+            if (_damage != null)
+            {
+                _damage(this, new DamageToEventArgs());
+            }
+        }
+
+        public void OnStartedG()
+        {
+            if (_startG != null)
+            {
+                _startG(this, new StartedFinishedGameEventArgs());
+            }
+        }
+
+        public void OnFinishedG()
+        {
+            if (_finishG != null)
+            {
+                _finishG(this, new StartedFinishedGameEventArgs());
+            }
+        }
+
+        public void OnStartedR()
+        {
+            if (_startR != null)
+            {
+                _startR(this, new StartedFinishedRoundEventArgs());
+            }
+        }
+
+        public void OnFinishedR()
+        {
+            if (_finishG != null)
+            {
+                _finishR(this, new StartedFinishedRoundEventArgs());
+            }
+        }
+
+
+        private DamageToPersonage _damage;
+        private StartedGame _startG;
+        private FinishedGame _finishG;
+        private StartedRound _startR;
+        private FinishedRound _finishR;
 
         /// <summary>
         /// сравниваем силу с защитой и получаем значение урона

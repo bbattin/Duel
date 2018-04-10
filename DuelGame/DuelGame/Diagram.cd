@@ -3,7 +3,7 @@
   <Class Name="DuelGame.Personage">
     <Position X="1.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAIAAAAAAAAAAACAAEAQABAAAAAAAABAQAAALAAA=</HashCode>
+      <HashCode>JAAAAIAAAAAAAAAAACAAAAQABAAAAAAAABAAAAALAAA=</HashCode>
       <FileName>Personages\Personage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,14 +31,14 @@
   <Class Name="DuelGame.UI" Collapsed="true">
     <Position X="10.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>UI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DuelGame.GameLogic">
     <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAMAIDAQABAgQAAAAQAAAgIAAAACCAAAAAAAAAAAQA=</HashCode>
       <FileName>GameLogic.cs</FileName>
     </TypeIdentifier>
   </Class>

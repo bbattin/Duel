@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DamageToEventArgs.cs" />
+    <Compile Include="StartedFinishedGameEventArgs.cs" />
+    <Compile Include="StartedFinishedRoundEventArgs.cs" />
     <Compile Include="Weapons\SledgeHammerAndHelmet.cs" />
     <Compile Include="Weapons\BowArrowAndLightShoes.cs" />
     <Compile Include="Personages\Beast.cs" />
