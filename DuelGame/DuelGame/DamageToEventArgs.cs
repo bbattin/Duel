@@ -8,5 +8,13 @@ namespace DuelGame
 {
     class DamageToEventArgs
     {
+        public DamageToEventArgs(int damageV)
+        {
+            DamageValue = damageV;
+        }
+
+        // данные, описывающие событие
+        public int DamageValue { get; private set; } // значение нанесенного ущерба
+        
     }
 }
