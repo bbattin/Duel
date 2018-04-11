@@ -13,8 +13,8 @@ namespace DuelGame
         {
             p.StartedG += StartGame;
             p.FinishedG += FinishGame;
-            //p.StartedR += OnNextMoved;
-            //p.FinishedR += Finish;
+            p.StartedR += StartRound;
+            p.FinishedR += FinishRound;
 
         }
 
@@ -126,11 +126,31 @@ namespace DuelGame
             StopWatch.Start();
         }
 
+        public void StartRound(object sender, StartedFinishedRoundEventArgs args)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
+            
+            Console.WriteLine();
+            Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
+            
+        }
+
         public void OnNextDamage(object sender, DamageToEventArgs args)
         {
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Нанесенный урон {0}", args.DamageValue);
+        }
+
+        public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
+
+            Console.WriteLine();
+            Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
+
         }
 
         public void FinishGame(object sender, StartedFinishedGameEventArgs args)
@@ -157,23 +177,6 @@ namespace DuelGame
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Длительность игры " + elapsedTime);
         }
-
-        //public void Start(object sender, StartedFinishedEventArgs args)
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.WriteLine("Start");
-        //    Console.WriteLine("Date now {0}", args.CreatedDate);
-        //    StopWatch.Start();
-        //}
-
-        //public void Finish(object sender, StartedFinishedEventArgs args)
-        //{
-        //    StopWatch.Stop();
-        //    args.FinishDate = DateTime.Now;
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.WriteLine("Finish");
-        //    Console.WriteLine("Date now {0}", args.FinishDate);
-        //}
 
         private int DamageCounter { get; set; }
         private Stopwatch StopWatch { get; set; }
