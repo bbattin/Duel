@@ -113,17 +113,7 @@ namespace DuelGame
             Console.WriteLine("Оружие первого игрока");
             Console.WriteLine("Название {0}, урон {1}, защита {2}", args.NameWRand, args.DamageWRand, args.ProtectionWRand);
 
-            if (args.LiveUzer > args.LiveRand)
-            {
-                Console.WriteLine("Выиграл {0}", args.NameUzer);
-                Console.WriteLine("Проиграл {0}", args.NameRand);
-            }
-            else
-            {
-                Console.WriteLine("Выиграл {0}", args.NameRand);
-                Console.WriteLine("Проиграл {0}", args.NameUzer);
-            }
-
+            Console.Clear();
             StopWatch.Start();
         }
 
@@ -134,7 +124,9 @@ namespace DuelGame
             
             Console.WriteLine();
             Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
-            
+
+           
+
         }
 
         public void OnNextDamage(object sender, DamageToEventArgs args)
@@ -142,6 +134,8 @@ namespace DuelGame
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("Нанесенный урон {0}", args.DamageValue);
+
+           
         }
 
         public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
@@ -151,6 +145,8 @@ namespace DuelGame
 
             Console.WriteLine();
             Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
+
+           
 
         }
 

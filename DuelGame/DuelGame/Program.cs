@@ -12,8 +12,9 @@ namespace DuelGame
         {
             
             Personage user = UI.GetPersonageForUser();
-
             user.WeaponsPersonage = UI.GetWeaponsForUser();
+
+            Console.Clear();
 
             GameLogic game = new GameLogic();
             UI eventsGame = new UI(game);
