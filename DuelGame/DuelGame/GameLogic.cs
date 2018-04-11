@@ -32,6 +32,7 @@ namespace DuelGame
             do
             {
                 OnStartedR(userPer, randomPer);
+                System.Threading.Thread.Sleep(1000);
                 damageForUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
                 damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
                 userPer.SetLiveAfterDamage(damageForUzer);

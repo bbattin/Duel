@@ -14,7 +14,7 @@ namespace DuelGame
             p.StartedG += StartGame;
             p.FinishedG += FinishGame;
             p.StartedR += StartRound;
-            p.FinishedR += FinishRound;
+            //p.FinishedR += FinishRound;
 
             StopWatch = new Stopwatch();
         }
@@ -124,7 +124,7 @@ namespace DuelGame
             Console.WriteLine("Имя {0}", args.NameUzer);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.Red;
-            for (int i = 0; i < args.LiveUzer; i++)
+            for (int i = 0; i < args.LiveUzer/2; i++)
             {
                 Console.Write("*");
             }
@@ -135,7 +135,7 @@ namespace DuelGame
             Console.WriteLine("Имя {0}", args.NameRand);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.Red;
-            for (int i = 0; i < args.LiveRand; i++)
+            for (int i = 0; i < args.LiveRand/2; i++)
             {
                 Console.Write("*");
             }
@@ -155,17 +155,17 @@ namespace DuelGame
            
         }
 
-        public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
+        //public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
 
-            Console.WriteLine();
-            Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
+        //    Console.WriteLine();
+        //    Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
 
            
 
-        }
+        //}
 
         public void FinishGame(object sender, StartedFinishedGameEventArgs args)
         {

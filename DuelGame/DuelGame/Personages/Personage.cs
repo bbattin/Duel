@@ -62,6 +62,7 @@ namespace DuelGame
         /// <param name="damage">урон</param>
         public void SetLiveAfterDamage(int damage)
         {
+            System.Threading.Thread.Sleep(1000);
             Live = Live - damage;
             ToDamage(damage);
         }
