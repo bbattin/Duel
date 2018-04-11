@@ -12,6 +12,9 @@ namespace DuelGame
     delegate void StartedRound(object sender, StartedFinishedRoundEventArgs args);
     delegate void FinishedRound(object sender, StartedFinishedRoundEventArgs args);
 
+    delegate void DamageToPersonage(object sender, DamageToEventArgs args);
+
+
     class GameLogic
     {
                
@@ -23,20 +26,21 @@ namespace DuelGame
         public void Duel(Personage userPer)
         {
             Personage randomPer = GetRandomPersonage();
-            UI eventsDamageUser = new UI(userPer);
-            UI eventsDamageRand = new UI(randomPer);
-
+            
             OnStartedG(userPer, randomPer);
             int damageForUzer;
             int damageForRandom;
             do
             {
                 OnStartedR(userPer, randomPer);
-                System.Threading.Thread.Sleep(400);
+                
+                System.Threading.Thread.Sleep(600);
                 damageForUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
                 damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
                 userPer.SetLiveAfterDamage(damageForUzer);
                 randomPer.SetLiveAfterDamage(damageForRandom);
+                ToDamage(damageForUzer);
+                ToDamage(damageForRandom);
                 OnFinishedR(userPer, randomPer);
 
             } while (userPer.Live > 0 && randomPer.Live > 0);
@@ -91,7 +95,26 @@ namespace DuelGame
             }
         }
 
-       
+        public event DamageToPersonage Damage
+        {
+            add
+            {
+                _damage += value;
+            }
+            remove
+            {
+                _damage -= value;
+            }
+        }
+
+        public void ToDamage(int damageV)
+        {
+            if (_damage != null)
+            {
+                _damage(this, new DamageToEventArgs(damageV));
+            }
+        }
+
         public void OnStartedG(Personage uzer, Personage rand)
         {
             if (_startG != null)
@@ -191,5 +214,6 @@ namespace DuelGame
         private FinishedGame _finishG;
         private StartedRound _startR;
         private FinishedRound _finishR;
+        private DamageToPersonage _damage;
     }
 }

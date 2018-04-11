@@ -14,16 +14,13 @@ namespace DuelGame
             p.StartedG += StartGame;
             p.FinishedG += FinishGame;
             p.StartedR += StartRound;
-            //p.FinishedR += FinishRound;
-
+           
+            p.Damage += OnNextDamage;
+            DamageCounter = 0;
             StopWatch = new Stopwatch();
         }
 
-        public UI(Personage p)
-        {
-            p.Damage += OnNextDamage;
-            DamageCounter = 0;
-        }
+       
 
         public static Personage GetPersonageForUser()
         {
@@ -151,9 +148,8 @@ namespace DuelGame
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
-            Console.WriteLine("Нанесенный урон {0}", args.DamageValue);
-
-           
+            Console.Write("-{0}", args.DamageValue);
+                       
         }
 
         //public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
