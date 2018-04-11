@@ -110,6 +110,9 @@ namespace DuelGame
             Console.WriteLine("Оружие первого игрока");
             Console.WriteLine("Название {0}, урон {1}, защита {2}", args.NameWRand, args.DamageWRand, args.ProtectionWRand);
 
+            Console.WriteLine();
+            Console.WriteLine("Нажмите любую клавишу для продолжения");
+            Console.ReadKey();
             Console.Clear();
             StopWatch.Start();
         }
@@ -147,10 +150,10 @@ namespace DuelGame
         {
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.SetCursorPosition(30, 2);
+            Console.SetCursorPosition(60, 1);
             Console.Write("-{0}", args.DamageValueForUser);
 
-            Console.SetCursorPosition(30, 6);
+            Console.SetCursorPosition(60, 3);
             Console.Write("-{0}", args.DamageValueForRand);
 
         }
