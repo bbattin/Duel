@@ -23,6 +23,9 @@ namespace DuelGame
         public void Duel(Personage userPer)
         {
             Personage randomPer = GetRandomPersonage();
+            UI eventsDamageUser = new UI(userPer);
+            UI eventsDamageRand = new UI(randomPer);
+
             OnStartedG(userPer, randomPer);
             int damageForUzer;
             int damageForRandom;
