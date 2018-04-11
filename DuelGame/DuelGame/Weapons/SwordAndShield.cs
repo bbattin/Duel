@@ -11,6 +11,7 @@ namespace DuelGame
     {
         public SwordAndShield()
         {
+            Name = "Меч + щит - комлпект 1";
             Damage = 4;
             Protection = 5;
         }

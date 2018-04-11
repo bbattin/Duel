@@ -11,6 +11,7 @@ namespace DuelGame
     {
         public StaffAndMantle()
         {
+            Name = "Посох + мантия - комлпект 2";
             Damage = 8;
             Protection = 1;
         }

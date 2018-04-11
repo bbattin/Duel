@@ -11,6 +11,7 @@ namespace DuelGame
     {
         public BowArrowAndLightShoes()
         {
+            Name = "Лук и стрелы + легкая обувь - комлпект 4";
             Damage = 4;
             Protection = 2;
         }

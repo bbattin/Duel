@@ -18,6 +18,9 @@ namespace DuelGame
             ForceRand = rand.Force;
             ProtectionUzer = uzer.Protection;
             ProtectionRand = rand.Protection;
+
+            NameWUzer = uzer.WeaponsPersonage.Name;
+            NameWRand = rand.WeaponsPersonage.Name;
             DamageWUzer = uzer.WeaponsPersonage.Damage;
             DamageWRand = rand.WeaponsPersonage.Damage;
             ProtectionWUzer = uzer.WeaponsPersonage.Protection;
@@ -34,6 +37,8 @@ namespace DuelGame
         public int ProtectionUzer { get; private set; }   // значение защиты персонажа пользователя
         public int ProtectionRand { get; private set; }   // значение защиты рандомного персонажа
 
+        public string NameWUzer { get; private set; }        // название оружия персонажа пользователя
+        public string NameWRand { get; private set; }        // название оружия рандомного персонажа
         public int DamageWUzer { get; private set; }        // значение урона от оружия персонажа пользователя
         public int DamageWRand { get; private set; }        // значение урона от оружия рандомного персонажа
         public int ProtectionWUzer { get; private set; }   // значение защиты от оружия персонажа пользователя

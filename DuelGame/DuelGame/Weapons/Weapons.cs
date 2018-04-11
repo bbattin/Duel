@@ -9,7 +9,8 @@ namespace DuelGame
     class Weapons
         // оружие
     {
-        public int Damage { get; protected set; }      // урон
+        public string Name { get; protected set; }       // название
+        public int Damage { get; protected set; }        // урон
         public int Protection { get; protected set; }    // защита
 
        

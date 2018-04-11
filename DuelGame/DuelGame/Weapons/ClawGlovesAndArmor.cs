@@ -11,6 +11,7 @@ namespace DuelGame
     {
         public ClawGlovesAndArmor()
         {
+            Name = "Перчатки-когти + броня - комлект 3";
             Damage = 2;
             Protection = 5;
         }

@@ -11,7 +11,7 @@ namespace DuelGame
     {
         public UI(GameLogic p)
         {
-            //p.StartedG += Start;
+            p.StartedG += StartGame;
             p.FinishedG += FinishGame;
             //p.StartedR += OnNextMoved;
             //p.FinishedR += Finish;
@@ -98,6 +98,33 @@ namespace DuelGame
             return d;
         }
 
+        public void StartGame(object sender, StartedFinishedGameEventArgs args)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Игрок первый");
+            Console.WriteLine("Имя {0}, жизнь {1}, сила {2}, защита {3}", args.NameUzer, args.LiveUzer, args.ForceUzer, args.ProtectionUzer);
+            Console.WriteLine("Оружие первого игрока");
+            Console.WriteLine("Название {0}, урон {1}, защита {2}", args.NameWUzer, args.DamageWUzer, args.ProtectionWUzer);
+
+            Console.WriteLine();
+            Console.WriteLine("Игрок второй");
+            Console.WriteLine("Имя {0}, жизнь {1}, сила {2}, защита {3}", args.NameRand, args.LiveRand, args.ForceRand, args.ProtectionRand);
+            Console.WriteLine("Оружие первого игрока");
+            Console.WriteLine("Название {0}, урон {1}, защита {2}", args.NameWRand, args.DamageWRand, args.ProtectionWRand);
+
+            if (args.LiveUzer > args.LiveRand)
+            {
+                Console.WriteLine("Выиграл {0}", args.NameUzer);
+                Console.WriteLine("Проиграл {0}", args.NameRand);
+            }
+            else
+            {
+                Console.WriteLine("Выиграл {0}", args.NameRand);
+                Console.WriteLine("Проиграл {0}", args.NameUzer);
+            }
+
+            StopWatch.Start();
+        }
 
         public void OnNextDamage(object sender, DamageToEventArgs args)
         {
@@ -108,6 +135,7 @@ namespace DuelGame
 
         public void FinishGame(object sender, StartedFinishedGameEventArgs args)
         {
+            StopWatch.Stop();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Количество ходов всего во время боя {0}", DamageCounter);
             Console.WriteLine("Жизни осталось у {0} {1}, {2} - {3}", args.NameUzer, args.LiveUzer, args.NameRand, args.LiveRand);
