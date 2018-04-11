@@ -16,22 +16,10 @@ namespace DuelGame
             user.WeaponsPersonage = UI.GetWeaponsForUser();
 
             GameLogic game = new GameLogic();
+            UI events = new UI(game);
             game.Duel(user);
 
-            //try
-            //{
-            //    GameLogic.Duel(user);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-            //finally
-            //{
-            //    Console.ForegroundColor = ConsoleColor.Red;
-            //    Console.WriteLine("Конец игры");
-            //}
-
+          
             Console.ReadKey();
         }
 

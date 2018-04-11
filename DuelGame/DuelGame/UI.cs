@@ -16,6 +16,7 @@ namespace DuelGame
             p.StartedR += StartRound;
             p.FinishedR += FinishRound;
 
+            StopWatch = new Stopwatch();
         }
 
         public UI(Personage p)

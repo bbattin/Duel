@@ -24,8 +24,6 @@ namespace DuelGame
         {
             Personage randomPer = GetRandomPersonage();
             OnStartedG(userPer, randomPer);
-            //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", userPer.Name, userPer.Live, userPer.Force, userPer.Protection);
-            //Console.WriteLine("{0} - жизнь {1}, сила {2}, защита {3}", randomPer.Name, randomPer.Live, randomPer.Force, randomPer.Protection);
             int damageForUzer;
             int damageForRandom;
             do
@@ -35,23 +33,10 @@ namespace DuelGame
                 damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
                 userPer.SetLiveAfterDamage(damageForUzer);
                 randomPer.SetLiveAfterDamage(damageForRandom);
-                
-                //Console.WriteLine("{0} - жизни осталось: {1}", userPer.Name, userPer.Live);
-                //Console.WriteLine("{0} - жизни осталось: {1}", randomPer.Name, randomPer.Live);
                 OnFinishedR(userPer, randomPer);
 
             } while (userPer.Live > 0 && randomPer.Live > 0);
             OnFinishedG(userPer, randomPer);
-
-            //if (userPer.Live > 0)
-            //{
-            //    Console.WriteLine("{0} - ты выиграл!", userPer.Name);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("{0} - ты выиграл!", randomPer.Name);
-            //}
-
         }
                
         public event StartedGame StartedG
