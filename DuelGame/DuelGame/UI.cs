@@ -119,13 +119,29 @@ namespace DuelGame
 
         public void StartRound(object sender, StartedFinishedRoundEventArgs args)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine("Имя {0}", args.NameUzer);
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
-            
-            Console.WriteLine();
-            Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
+            Console.BackgroundColor = ConsoleColor.Red;
+            for (int i = 0; i < args.LiveUzer; i++)
+            {
+                Console.Write("*");
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
 
-           
+            Console.WriteLine();
+            Console.WriteLine("Имя {0}", args.NameRand);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Red;
+            for (int i = 0; i < args.LiveRand; i++)
+            {
+                Console.Write("*");
+            }
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
 
         }
 
@@ -133,6 +149,7 @@ namespace DuelGame
         {
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine();
             Console.WriteLine("Нанесенный урон {0}", args.DamageValue);
 
            
