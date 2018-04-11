@@ -119,6 +119,7 @@ namespace DuelGame
 
         public void StartRound(object sender, StartedFinishedRoundEventArgs args)
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine("Имя {0}", args.NameUzer);
