@@ -16,7 +16,7 @@ namespace DuelGame
             p.StartedR += StartRound;
            
             p.Damage += OnNextDamage;
-            DamageCounter = 0;
+            RoundsCounter = 0;
             StopWatch = new Stopwatch();
         }
 
@@ -24,13 +24,20 @@ namespace DuelGame
 
         public static Personage GetPersonageForUser()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine();
+            Console.WriteLine("Игра Duel");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Выберите персонажа для игры:");
             Console.WriteLine("Человек (жизнь 100, сила 5, защита 7) - нажмите 1");
             Console.WriteLine("Зверь (жизнь 110, сила 8, защита 5) - нажмите 2");
             Console.WriteLine("Маг (жизнь 105, сила 6, защита 6) - нажмите 3");
             string pers = Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("Введите имя персонажа: ");
             string name = Console.ReadLine();
+            Console.WriteLine();
             Personage d;
             switch (pers)
             {
@@ -98,6 +105,10 @@ namespace DuelGame
 
         public void StartGame(object sender, StartedFinishedGameEventArgs args)
         {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Информация об игроках");
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Игрок первый");
             Console.WriteLine("Имя {0}, жизнь {1}, сила {2}, защита {3}", args.NameUzer, args.LiveUzer, args.ForceUzer, args.ProtectionUzer);
@@ -120,20 +131,31 @@ namespace DuelGame
         public void StartRound(object sender, StartedFinishedRoundEventArgs args)
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine();
+            Console.WriteLine("Бой. Раунд {0}", RoundsCounter + 1);
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine("Имя {0}", args.NameUzer);
+            
+            Console.Write("Жизнь  ");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Green;
+            
             for (int i = 0; i < args.LiveUzer/2; i++)
             {
                 Console.Write("*");
             }
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.BackgroundColor = ConsoleColor.Black;
 
             Console.WriteLine();
             Console.WriteLine("Имя {0}", args.NameRand);
+            
+            Console.Write("Жизнь  ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.Red;
             for (int i = 0; i < args.LiveRand/2; i++)
@@ -143,17 +165,21 @@ namespace DuelGame
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
+            RoundsCounter++;
 
         }
 
         public void OnNextDamage(object sender, DamageToEventArgs args)
         {
-            DamageCounter++;
+            
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.SetCursorPosition(60, 1);
+
+            Console.SetCursorPosition(70, 0);
+            Console.Write("Урон");
+            Console.SetCursorPosition(70, 4);
             Console.Write("-{0}", args.DamageValueForUser);
 
-            Console.SetCursorPosition(60, 3);
+            Console.SetCursorPosition(70, 6);
             Console.Write("-{0}", args.DamageValueForRand);
 
         }
@@ -174,8 +200,13 @@ namespace DuelGame
         {
             StopWatch.Stop();
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine();
+            Console.WriteLine("Результаты игры Duel");
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Количество ходов всего во время боя {0}", DamageCounter);
+            Console.WriteLine("Количество раундов {0}", RoundsCounter);
             Console.WriteLine("Жизни осталось у {0} {1}, {2} - {3}", args.NameUzer, args.LiveUzer, args.NameRand, args.LiveRand);
 
             if (args.LiveUzer > args.LiveRand)
@@ -196,7 +227,7 @@ namespace DuelGame
             Console.WriteLine("Длительность игры " + elapsedTime);
         }
 
-        private int DamageCounter { get; set; }
+        private int RoundsCounter { get; set; }
         private Stopwatch StopWatch { get; set; }
     }
 }
