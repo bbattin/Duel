@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,22 +9,20 @@ namespace DuelGame
 {
     class UI
     {
-        //public UI(GameLogic p)
-        //{
-        //    p.FinishedG += OnNextCompare;
-        //    p.Moved += OnNextMoved;
-        //    p.Started += Start;
-        //    p.Finished += Finish;
+        public UI(GameLogic p)
+        {
+            //p.StartedG += Start;
+            p.FinishedG += FinishGame;
+            //p.StartedR += OnNextMoved;
+            //p.FinishedR += Finish;
 
-        //    CompareCounter = 0;
-        //    MovedCounter = 0;
-        //    StopWatch = new Stopwatch();
-        //}
+        }
 
-        //public UI(Personage p)
-        //{
-        //    p.ToDamage += 
-        //}
+        public UI(Personage p)
+        {
+            p.Damage += OnNextDamage;
+            DamageCounter = 0;
+        }
 
         public static Personage GetPersonageForUser()
         {
@@ -99,35 +98,37 @@ namespace DuelGame
             return d;
         }
 
-        
 
-        //public void OnNextCompare(object sender, MovedAndCompareEventArgs args)
-        //{
-        //    CompareCounter++;
-        //    //Console.ForegroundColor = ConsoleColor.DarkGreen;
-        //    ////Console.Write(".");
-        //    //Console.WriteLine("Compare: first number - {0}, second number = {1}", args.IndexFrom, args.IndexTo);
-        //}
+        public void OnNextDamage(object sender, DamageToEventArgs args)
+        {
+            DamageCounter++;
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Нанесенный урон {0}", args.DamageValue);
+        }
 
-        //public void OnNextMoved(object sender, MovedAndCompareEventArgs args)
-        //{
-        //    MovedCounter++;
-        //    //Console.ForegroundColor = ConsoleColor.Gray;
-        //    ////Console.Write(".");
-        //    //Console.WriteLine("Moved: index from = {0}, index to = {1}", args.IndexFrom, args.IndexTo);
-        //}
+        public void FinishGame(object sender, StartedFinishedGameEventArgs args)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Количество ходов всего во время боя {0}", DamageCounter);
+            Console.WriteLine("Жизни осталось у {0} {1}, {2} - {3}", args.NameUzer, args.LiveUzer, args.NameRand, args.LiveRand);
 
-        //public void Report()
-        //{
-        //    Console.ForegroundColor = ConsoleColor.White;
-        //    Console.WriteLine("Report: count compare - {0}, moved - {1}", CompareCounter, MovedCounter);
+            if (args.LiveUzer > args.LiveRand)
+            {
+                Console.WriteLine("Выиграл {0}", args.NameUzer);
+                Console.WriteLine("Проиграл {0}", args.NameRand);
+            }
+            else
+            {
+                Console.WriteLine("Выиграл {0}", args.NameRand);
+                Console.WriteLine("Проиграл {0}", args.NameUzer);
+            }
 
-        //    TimeSpan ts = StopWatch.Elapsed;
-        //    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-        //    Console.WriteLine();
-        //    Console.ForegroundColor = ConsoleColor.White;
-        //    Console.WriteLine("RunTime " + elapsedTime);
-        //}
+            TimeSpan ts = StopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Длительность игры " + elapsedTime);
+        }
 
         //public void Start(object sender, StartedFinishedEventArgs args)
         //{
@@ -146,8 +147,7 @@ namespace DuelGame
         //    Console.WriteLine("Date now {0}", args.FinishDate);
         //}
 
-        //private int CompareCounter { get; set; }
-        //private int MovedCounter { get; set; }
-        //private Stopwatch StopWatch { get; set; }
+        private int DamageCounter { get; set; }
+        private Stopwatch StopWatch { get; set; }
     }
 }
