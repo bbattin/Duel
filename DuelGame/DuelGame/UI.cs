@@ -123,8 +123,8 @@ namespace DuelGame
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine("Имя {0}", args.NameUzer);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Green;
             for (int i = 0; i < args.LiveUzer/2; i++)
             {
                 Console.Write("*");
