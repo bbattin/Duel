@@ -34,14 +34,14 @@ namespace DuelGame
             {
                 OnStartedR(userPer, randomPer);
                 
-                System.Threading.Thread.Sleep(600);
+                System.Threading.Thread.Sleep(1000);
                 damageForUzer = GetRezultDamage(userPer.GetProtectionValueForStep(), randomPer.GetHitValueForStep());
                 damageForRandom = GetRezultDamage(randomPer.GetProtectionValueForStep(), userPer.GetHitValueForStep());
                 userPer.SetLiveAfterDamage(damageForUzer);
                 randomPer.SetLiveAfterDamage(damageForRandom);
-                ToDamage(damageForUzer);
-                ToDamage(damageForRandom);
+                
                 OnFinishedR(userPer, randomPer);
+                ToDamage(damageForUzer, damageForRandom);
 
             } while (userPer.Live > 0 && randomPer.Live > 0);
             OnFinishedG(userPer, randomPer);
@@ -107,11 +107,11 @@ namespace DuelGame
             }
         }
 
-        public void ToDamage(int damageV)
+        public void ToDamage(int damageVForUser, int damageVForRand)
         {
             if (_damage != null)
             {
-                _damage(this, new DamageToEventArgs(damageV));
+                _damage(this, new DamageToEventArgs(damageVForUser, damageVForRand));
             }
         }
 

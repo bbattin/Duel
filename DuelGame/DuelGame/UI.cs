@@ -147,9 +147,12 @@ namespace DuelGame
         {
             DamageCounter++;
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine();
-            Console.Write("-{0}", args.DamageValue);
-                       
+            Console.SetCursorPosition(30, 2);
+            Console.Write("-{0}", args.DamageValueForUser);
+
+            Console.SetCursorPosition(30, 6);
+            Console.Write("-{0}", args.DamageValueForRand);
+
         }
 
         //public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
@@ -167,6 +170,7 @@ namespace DuelGame
         public void FinishGame(object sender, StartedFinishedGameEventArgs args)
         {
             StopWatch.Stop();
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Количество ходов всего во время боя {0}", DamageCounter);
             Console.WriteLine("Жизни осталось у {0} {1}, {2} - {3}", args.NameUzer, args.LiveUzer, args.NameRand, args.LiveRand);
