@@ -15,7 +15,7 @@ namespace DuelGame
     delegate void DamageToPersonage(object sender, DamageToEventArgs args);
 
 
-    class GameLogic
+    class GameLogic : IGame
     {
                
         /// <summary>
@@ -40,7 +40,6 @@ namespace DuelGame
                 userPer.SetLiveAfterDamage(damageForUzer);
                 randomPer.SetLiveAfterDamage(damageForRandom);
                 
-                OnFinishedR(userPer, randomPer);
                 ToDamage(damageForUzer, damageForRandom);
                 System.Threading.Thread.Sleep(1000);
 
@@ -81,18 +80,6 @@ namespace DuelGame
             remove
             {
                 _startR -= value;
-            }
-        }
-
-        public event FinishedRound FinishedR
-        {
-            add
-            {
-                _finishR += value;
-            }
-            remove
-            {
-                _finishR -= value;
             }
         }
 
@@ -140,13 +127,6 @@ namespace DuelGame
             }
         }
 
-        public void OnFinishedR(Personage uzer, Personage rand)
-        {
-            if (_finishR != null)
-            {
-                _finishR(this, new StartedFinishedRoundEventArgs(uzer, rand));
-            }
-        }
 
 
        
@@ -214,7 +194,6 @@ namespace DuelGame
         private StartedGame _startG;
         private FinishedGame _finishG;
         private StartedRound _startR;
-        private FinishedRound _finishR;
         private DamageToPersonage _damage;
     }
 }

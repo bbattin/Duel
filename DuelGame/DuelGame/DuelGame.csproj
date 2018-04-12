@@ -45,6 +45,7 @@
     <Compile Include="Events\DamageToEventArgs.cs" />
     <Compile Include="Events\StartedFinishedGameEventArgs.cs" />
     <Compile Include="Events\StartedFinishedRoundEventArgs.cs" />
+    <Compile Include="IGame.cs" />
     <Compile Include="Weapons\SledgeHammerAndHelmet.cs" />
     <Compile Include="Weapons\BowArrowAndLightShoes.cs" />
     <Compile Include="Personages\Beast.cs" />

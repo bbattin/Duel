@@ -184,18 +184,7 @@ namespace DuelGame
 
         }
 
-        //public void FinishRound(object sender, StartedFinishedRoundEventArgs args)
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.WriteLine("Имя {0}, жизнь {1}", args.NameUzer, args.LiveUzer);
-
-        //    Console.WriteLine();
-        //    Console.WriteLine("Имя {0}, жизнь {1}", args.NameRand, args.LiveRand);
-
-           
-
-        //}
-
+      
         public void FinishGame(object sender, StartedFinishedGameEventArgs args)
         {
             StopWatch.Stop();
