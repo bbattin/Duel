@@ -23,6 +23,8 @@ namespace DuelGame
                 }
             }
 
+            UI.GetNamePersonageForUser(user);
+
             while (user.WeaponsPersonage == null)
             {
                 try

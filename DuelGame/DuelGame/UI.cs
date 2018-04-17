@@ -35,9 +35,6 @@ namespace DuelGame
             Console.WriteLine("Маг (жизнь 105, сила 6, защита 6) - нажмите 3");
             string pers = Console.ReadLine();
             Console.WriteLine();
-            Console.WriteLine("Введите имя персонажа: ");
-            string name = Console.ReadLine();
-            Console.WriteLine();
             Personage d;
             switch (pers)
             {
@@ -57,8 +54,15 @@ namespace DuelGame
                     throw new InputUserPersonageException(string.Format("Ошибка: введена неверная цифра при выборе персонажа"));
                     
             }
-            d.Name = name;
             return d;
+        }
+
+        public static void GetNamePersonageForUser(Personage d)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Введите имя персонажа: ");
+            string name = Console.ReadLine();
+            d.Name = name;
         }
 
         public static Weapons GetWeaponsForUser()
