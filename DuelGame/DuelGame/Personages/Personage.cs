@@ -15,27 +15,7 @@ namespace DuelGame
         public string Name { get ; set; }                         // имя персонажа
         public Weapons WeaponsPersonage { get; set; }             // оружие персонажа
 
-        ///// <summary>
-        ///// проверка на остаток жизни персонажа перед ходом
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool CheckLive()  
-        //{
-        //    bool live = false;
-
-        //    if (Live > 0)
-        //    {
-        //        live = true;
-        //    }
-        //    else
-        //    {
-        //        throw new Exception(string.Format("Персонаж {0} уже мертв и напасть не может.", this));  // собственные исключения, отдельным классом
-        //    }
-        //    return live;
-        //}
-
-
-       
+         
         /// <summary>
         /// значение защиты для шага, учитывая рандом защиты из-за ловкости
         /// </summary>
