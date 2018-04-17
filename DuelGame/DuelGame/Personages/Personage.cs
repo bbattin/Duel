@@ -60,8 +60,15 @@ namespace DuelGame
         /// <param name="damage">урон</param>
         public void SetLiveAfterDamage(int damage)
         {
-             Live = Live - damage;
-            
+            if(damage < Live)
+            {
+                Live = Live - damage;
+            }
+            else
+            {
+                Live = 0;
+            }
+                        
         }
 
      
