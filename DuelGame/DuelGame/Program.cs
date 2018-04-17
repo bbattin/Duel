@@ -10,28 +10,38 @@ namespace DuelGame
     {
         static void Main(string[] args)
         {
-            try
+            Personage user = null;
+            while(user == null)
             {
-                Personage user = UI.GetPersonageForUser();
-                user.WeaponsPersonage = UI.GetWeaponsForUser();
-                Console.Clear();
-
-                GameLogic game = new GameLogic();
-                UI eventsGame = new UI(game);
-
-                game.Duel(user);
-            }
-            catch (InputUserException ex)
-            {
-                Console.WriteLine("{0} {1}", ex.CreatedDate, ex.Message);
-            }
-            finally
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Конец игры");
+                try
+                {
+                    user = UI.GetPersonageForUser();
+                }
+                catch (InputUserPersonageException ex)
+                {
+                    Console.WriteLine("{0} {1}", ex.CreatedDate, ex.Message);
+                }
             }
 
-                      
+            while (user.WeaponsPersonage == null)
+            {
+                try
+                {
+                    user.WeaponsPersonage = UI.GetWeaponsForUser();
+                }
+                catch (InputUserPersonageException ex)
+                {
+                    Console.WriteLine("{0} {1}", ex.CreatedDate, ex.Message);
+                }
+            }
+
+            Console.Clear();
+
+            GameLogic game = new GameLogic();
+            UI eventsGame = new UI(game);
+
+            game.Duel(user);
+
             Console.ReadKey();
         }
 

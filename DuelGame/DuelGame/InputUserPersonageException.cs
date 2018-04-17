@@ -6,26 +6,25 @@ using System.Threading.Tasks;
 
 namespace DuelGame
 {
-    class InputUserException : Exception
+    class InputUserPersonageException : Exception
     {
-        public InputUserException()
+        public InputUserPersonageException()
         {
             CreatedDate = DateTime.Now;
         }
 
-        public InputUserException(string message)
+        public InputUserPersonageException(string message)
             : base(message)
         {
             CreatedDate = DateTime.Now;
         }
 
-        public InputUserException(string message, Exception innerException)
+        public InputUserPersonageException(string message, Exception innerException)
             : base(message, innerException)
         {
             CreatedDate = DateTime.Now;
         }
 
-        // описание возникшей ситации
         public DateTime CreatedDate { get; private set; }
     }
 }

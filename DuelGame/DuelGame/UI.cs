@@ -54,7 +54,7 @@ namespace DuelGame
                     d = new Magician();
                     break;
                 default:
-                    throw new InputUserException(string.Format("Ошибка: введена неверная цифра при выборе персонажа"));
+                    throw new InputUserPersonageException(string.Format("Ошибка: введена неверная цифра при выборе персонажа"));
                     
             }
             d.Name = name;
@@ -95,7 +95,7 @@ namespace DuelGame
                     d = new SledgeHammerAndHelmet();
                     break;
                 default:
-                    throw new InputUserException(string.Format("Ошибка: введена неверная цифра при выборе оружия"));
+                    throw new InputUserPersonageException(string.Format("Ошибка: введена неверная цифра при выборе оружия"));
             }
             return d;
         }
