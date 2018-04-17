@@ -140,8 +140,7 @@ namespace DuelGame
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.WriteLine("Имя {0}", args.NameUzer);
-            
-            Console.Write("Жизнь  ");
+            Console.WriteLine("Жизнь {0} ", args.LiveUzer);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.BackgroundColor = ConsoleColor.Green;
             
@@ -153,9 +152,9 @@ namespace DuelGame
             Console.BackgroundColor = ConsoleColor.Black;
 
             Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Имя {0}", args.NameRand);
-            
-            Console.Write("Жизнь  ");
+            Console.WriteLine("Жизнь {0} ", args.LiveRand);
             Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.Red;
             for (int i = 0; i < args.LiveRand/2; i++)
@@ -174,13 +173,10 @@ namespace DuelGame
             
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            Console.SetCursorPosition(70, 0);
-            Console.Write("Урон");
-            Console.SetCursorPosition(70, 4);
-            Console.Write("-{0}", args.DamageValueForUser);
-
-            Console.SetCursorPosition(70, 6);
-            Console.Write("-{0}", args.DamageValueForRand);
+            Console.SetCursorPosition(10, 4);
+            Console.WriteLine("Урон -{0}", args.DamageValueForUser);
+            Console.SetCursorPosition(10, 8);
+            Console.WriteLine("Урон -{0}", args.DamageValueForRand);
 
         }
 
