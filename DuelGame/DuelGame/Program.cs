@@ -21,7 +21,7 @@ namespace DuelGame
 
                 game.Duel(user);
             }
-            catch (InputUzerException ex)
+            catch (InputUserException ex)
             {
                 Console.WriteLine("{0} {1}", ex.CreatedDate, ex.Message);
             }
