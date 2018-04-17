@@ -54,9 +54,8 @@ namespace DuelGame
                     d = new Magician();
                     break;
                 default:
-                    Console.WriteLine("Ошибка: введена неверная цифра. Вам выбран по умолчанию персонаж Человек.");
-                    d = new Human();
-                    break;
+                    throw new InputUzerException(string.Format("Ошибка: введена неверная цифра"));
+                    
             }
             d.Name = name;
             return d;
@@ -96,9 +95,7 @@ namespace DuelGame
                     d = new SledgeHammerAndHelmet();
                     break;
                 default:
-                    Console.WriteLine("Ошибка: введена неверная цифра. Вам выбран по умолчанию первый комплект.");
-                    d = new SwordAndShield();
-                    break;
+                    throw new InputUzerException(string.Format("Ошибка: введена неверная цифра"));
             }
             return d;
         }
