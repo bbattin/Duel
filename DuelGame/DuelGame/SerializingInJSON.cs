@@ -13,5 +13,6 @@ namespace DuelGame
         //Personage[] people;
 
         //DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Person[]));
+
     }
 }

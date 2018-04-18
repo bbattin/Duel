@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace DuelGame
 {
-    [DataContract]  // сериализация
+    [DataContract]  // сериализация в Json
     class Personage
     {
         [DataMember]
