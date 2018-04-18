@@ -48,6 +48,7 @@
     <Compile Include="Events\StartedFinishedRoundEventArgs.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="InputUserPersonageException.cs" />
+    <Compile Include="SerializingInJSON.cs" />
     <Compile Include="Weapons\SledgeHammerAndHelmet.cs" />
     <Compile Include="Weapons\BowArrowAndLightShoes.cs" />
     <Compile Include="Personages\Beast.cs" />
