@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 
 namespace DuelGame
 {
+    [DataContract]
     class Personage
     {
-        
+        [DataMember]
         public int Live { get; protected set; }                   // жизнь
+        [DataMember]
         public int Force { get; protected set; }                  // сила
+        [DataMember]
         public int Protection { get; protected set; }             // защита
+        [DataMember]
         public string Name { get ; set; }                         // имя персонажа
         public Weapons WeaponsPersonage { get; set; }             // оружие персонажа
 
